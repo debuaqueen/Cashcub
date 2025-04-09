@@ -1,0 +1,208 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    margin: 0;
+    background-color: #f5e1a4; /* Soft green background */
+    background-image: url('path_to_your_animal_image.jpg'); /* Set your background image */
+    background-size: cover; /* Cover the entire body */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    padding: 20px;
+    position: relative; /* Required for overlay positioning */
+}
+
+
+body::before {
+    content: ""; /* Empty content for background image */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('path_to_your_animal_image.jpg'); /* Set your background image */
+    background-size: cover; /* Cover the entire body */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    opacity: 0.5; /* Set the opacity of the background image */
+    z-index: -1; /* Behind other elements */
+}
+
+
+h1, h2, .clock {
+    position: relative; /* Bring text in front of overlay */
+    z-index: 1; /* Ensure text is above the overlay */
+    text-align: center;
+    color: #4CAF50; /* Darker green */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #4CAF50; /* Darker green */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    font-weight: bold; /* Make text bold */
+    font-size: 2.5em; /* Increase font size for h1 */
+}
+
+h2 {
+    font-size: 2em; /* Increase font size for h2 */
+    margin-top: 20px; /* Add space above h2 */
+}
+
+/* Optional: Background and padding for more emphasis */
+h1, h2 {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background */
+    padding: 10px; /* Add padding around text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.clock {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+    background-color: #ffffff;
+    padding: 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; /* Smooth animation */
+}
+
+.clock:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.input-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    max-width: 800px; /* Increased width */
+    width: 100%; /* Full width */
+}
+
+.input-section label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.input-section input[type="number"], .input-section input[type="date"] {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+    width: 100%; /* Make input fields take full available space */
+}
+
+.input-section button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-section button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.expenses-list {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffcccb; /* Light pink */
+    color: white;
+    font-weight: bold;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Cute animal illustrations */
+.animal {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: auto;
+}
+
+
+#summary-btn {
+    padding: 10px 20px; /* Spacing inside the button */
+    background-color: #ffcccb; /* Light pink background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1.2em; /* Larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+#summary-btn:hover {
+    background-color: #ff9999; /* Darker pink on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between cells */
+}
+
+tr {
+    background-color: #87CEEB; /* Sky Blue */
+    color: #ffffff; /* White text color */
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 128, 0.6); /* Slightly lighter transparent dark blue for even rows */
+}
+
+td, th {
+    padding: 15px; /* Add padding for cell content */
+    text-align: left; /* Align text to the left */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 128, 1); /* Solid dark blue on hover */
+}
